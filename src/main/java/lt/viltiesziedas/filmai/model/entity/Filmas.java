@@ -25,7 +25,7 @@ public class Filmas {
     private Rezisierius filmoRezisierius;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "komentarasFilmui")
+    @OneToMany(mappedBy = "komentarasFilmui", cascade = CascadeType.REMOVE)
     private Set<Komentaras> filmoKomentarai;
 
     @ManyToMany
