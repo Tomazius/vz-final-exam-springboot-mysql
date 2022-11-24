@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Kažkas nepavyko</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+<h3>Registracija nepavyko</h3>
+<p>Registracijoje pateikti duomenys turi atitikti šiuos kriterijus:<br>
+1. Vartotojo username negali sutapti su slaptažodžiu;<br>
+2. Elektroninio pašto adresas turi turėti simbolius "@" ir ".";<br>
+3. Slaptažodis turi turėti ne mažiau 10 simbolių;<br>
+4. Slaptažodis turi būti sudarytas iš mažųjų ir didžiųjų raidžių bei skaičių;<br>
+5. Visi laukai turi būti užpildyti.</p>
+<br>
+<a th:href="@{/registracija}">Grįžti atgal</a>
+</body>
+</html>

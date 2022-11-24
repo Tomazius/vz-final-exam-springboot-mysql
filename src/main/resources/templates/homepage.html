@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Pagrindinis</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" margin="20px">
+  <a class="navbar-brand" href="#">Navigacija</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/filmai/visi_filmai}">Filmai<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/zanrai/visi_zanrai}">Žanrai</a>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}">Atsijungti</a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0" th:action="@{/filmai/informacija/}" method="get">
+      <input class="form-control mr-sm-2" th:value="${pavadinimas}" name="pavadinimas" type="search" placeholder="Įveskite filmo pavadinimą...">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ieškoti</button>
+    </form>
+  </div>
+</nav>
+
+<!--<div class>
+  <div class="container rs-content rs-header p-0"></div>
+  <nav class="navbar navbar-expand-lg navbar-light p-0">
+    <div class="container-fluid rs-content py-2 p-lg-0 border-1-bottom rounded-top">
+      <li class="nav-item dropdown-submenu">Lopas
+      </li>
+      <li class="nav-item dropdown-submenu">
+        <a th:href="@{/filmai/visi_filmai}" class="nav-link">Filmai</a>
+      </li>
+      <li class="nav-item dropdown-submenu">
+        <a th:href="@{/zanrai/visi_zanrai}" class="nav-link">Žanrai</a>
+      </li>
+    </div>
+  </nav>
+</div>
+<div class="container d-flex flex-column align-items-center">
+  <div class="row col-8">
+    <br>
+    <div class="input-group">
+      <form  th:action="@{/filmai/informacija/}" class="d-flex w-100" method="get">
+        <input th:value="${pavadinimas}" type="text" name="pavadinimas" class="form-control" placeholder="Įveskite filmo pavadinimą...">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="submit">
+            Ieškoti
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <p class="mt-4 text-center">Įveskite pavadinimą, filmo, kurio ieškote.</p>
+</div>-->
+</body>
+</html>

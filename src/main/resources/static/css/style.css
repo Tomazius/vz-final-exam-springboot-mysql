@@ -1,0 +1,30 @@
+/*h1{
+color:red!important}*/
+
+.tarpas{
+   margin-right:15px;
+}
+
+.checkboxai {
+    width: 25px;
+    height: 25px;
+}
+.dezele{
+    display: inline-block;
+}
+.listboxas{
+    margin: 2px;
+}
+.aplankas{
+    border:1px solid rgba(0,0,0,.125)
+    }
+.divleft{
+    width: 150px;
+    height:50px;
+    float: left;
+}
+
+.tosudostoris{
+    width: 49%;
+    float: left;
+}

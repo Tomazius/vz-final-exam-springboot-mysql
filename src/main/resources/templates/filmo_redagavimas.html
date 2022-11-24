@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Filmo redagavimas</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Filmo redagavimas</h1>
+    <hr>
+    <h2>Laukeliuose pateikite filmo informaciją</h2>
+
+    <form th:action="@{/filmai/pridetas_filmas}" th:object="${filmas}" method="POST">
+        <input type="hidden" th:field="*{id}">
+        <input th:field="*{pavadinimas}" type="text" placeholder="Filmo pavadinimas" class="form-control mb-4 col-4">
+        <input th:field="*{metai}" type="text" placeholder="Metai, kada išleistas filmas" class="form-control mb-4 col-4">
+        <input th:value="${rastiRezisieriu}" name="rastiRezisieriu" type="text" placeholder="Režisierius" class="form-control mb-4 col-4"> <!-- Čia blogai buvo. Turėjot užvadinti rastiRezisieriu, nes sekantis puslapis gauna rastiReziseriu. Analogiškai, kaip darėte prideti_filma.html puslapyje -->
+        <input th:field="*{trukmeMin}" type="text" placeholder="Trukmė" class="form-control mb-4 col-4">
+        <input th:field="*{imdbRating}" type="text"  placeholder="IMDB Reitingas" class="form-control mb-4 col-4">
+        <textarea th:field="*{aprasymas}" placeholder="Aprašymas" class="form-control mb-4 col-7"></textarea>
+        <label><strong>Žanrai:</strong>
+            <br>
+            <div th:each="zanras: ${filmoZanrai}">
+                <span th:text="${zanras.getPavadinimas()}"></span>
+                <input type="checkbox" name="zanrai" class="checkboxai"
+                th:value="${zanras.getId()}"
+                th:field="*{filmoZanrai}"
+                />
+            </div>
+        </label>
+        <br>
+        <input type="submit" value="Išsaugokite filmą" class="btn btn-info col-2">
+    </form>
+
+    <hr>
+
+    <a th:href="@{/}"> Grįžti atgal</a>
+</div>
+</body>
+</html>

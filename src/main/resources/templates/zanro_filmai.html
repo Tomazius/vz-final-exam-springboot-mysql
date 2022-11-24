@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Filmai pagal žanrą</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+  <h2 th:text="${zanroPavadinimas}"></h2>
+  <div th:each="filmas : ${zanroFilmai}" class="list-group">
+    <a th:text="${filmas.getPavadinimas()}" th:href="@{/filmai/informacija(pavadinimas=${filmas.getPavadinimas()})}" class="list-group-item list-group-item-action"></a>
+  </div>
+  <br>
+  <form th:action="@{'/zanrai/istrinti_zanra/' +${id}}" th:object="${zanras}" type="hidden" method="POST">
+
+    <input type="submit" value="Ištrinti žanrą">
+  </form>
+  <!--<input type="submit" th:action="@{'/zanrai/istrinti_zanra/(id=${zanras.getId()})" method="POST" value="Ištrinti žanrą" class="btn btn-primary btn-sm divleft aplankas">-->
+  <!--<input type="hidden" th:field="*{id}">-->
+</body>
+</html>
